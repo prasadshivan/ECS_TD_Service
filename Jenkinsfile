@@ -7,7 +7,7 @@ pipeline {
       }
     }
    
-   stage('Create a new Service') {
+   stage('Update a Service') {
       steps {
         sh 'aws ecs update-service --cluster DevopsTest --service ecs-simple-service2 --task-definition ExampleTask --desired-count 3'
       }
