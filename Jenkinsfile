@@ -3,11 +3,11 @@ pipeline {
   stages {
     stage('Register new Task Defenition') {
       steps {
-        sh 'aws ecs register-task-definition --cli-input-json file://task_definition.json --tags key=stack,value=dev' 
+        sh 'aws ecs register-task-definition --cli-input-json file://task_definition.json' 
       }
     }
    
-   stage('create a new service') {
+   stage('Create a new Service') {
       steps {
         sh 'aws ecs create-service --cluster DevopsTest --service-name ecs-simple-service2 --task-definition ExampleTask --desired-count 3'
       }
